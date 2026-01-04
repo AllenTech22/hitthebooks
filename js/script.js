@@ -4,7 +4,6 @@
 const tutors = [
     {
         name: "Allen Fraiman",
-        // Comprehensive list covering Math (Grade 3 - Diff Eq), Physics, Engineering, Chem, and Test Prep
         subjects: [
             "Math", "Algebra 1", "Algebra 2", "Geometry", "Trigonometry", 
             "Pre-Calculus", "Calculus 1", "Calculus 2", "Calculus 3", 
@@ -16,16 +15,15 @@ const tutors = [
             "SAT Prep", "ACT Prep", "Test Prep"
         ],
         bio: "Specializes in advanced Mathematics, Physics, and Mechanical Engineering courses.",
-        school: "College Name Here", // Edit this
-        major: "Mechanical Engineering", // Edit this
-        gpa: "GPA / SAT Score", // Edit this
-        hobbies: "Hobby 1, Hobby 2", // Edit this
+        school: "College Name Here", 
+        major: "Mechanical Engineering", 
+        gpa: "GPA / SAT Score", 
+        hobbies: "Hobby 1, Hobby 2", 
         detailedBio: "I can tutor any math level from 3rd grade up to Differential Equations. I also specialize in college-level Physics (up to E&M), Chemistry, and core Mechanical Engineering courses like Thermo and Fluids.",
         img: "images/profilepic.png" 
     },
     {
         name: "Philip Zghaib",
-        // Covers Math up to Calc AB, Finance, Econ, Psych, and Test Prep
         subjects: [
             "Math", "Algebra 1", "Algebra 2", "Geometry", "Pre-Calculus", 
             "Calculus", "AP Calculus AB", 
@@ -35,16 +33,15 @@ const tutors = [
             "SAT Prep", "ACT Prep", "Test Prep"
         ],
         bio: "Expert in Mathematics, Finance, and AP Social Sciences.",
-        school: "College Name Here", // Edit this
-        major: "Finance/Economics", // Edit this
-        gpa: "GPA / SAT Score", // Edit this
-        hobbies: "Hobby 1, Hobby 2", // Edit this
+        school: "College Name Here", 
+        major: "Finance/Economics", 
+        gpa: "GPA / SAT Score", 
+        hobbies: "Hobby 1, Hobby 2", 
         detailedBio: "I tutor math students from elementary school up to AP Calculus AB. My other specialties include Finance, AP Macroeconomics, and AP Psychology, along with standardized test prep.",
         img: "images/profilepic.png"
     },
     {
         name: "Sam Fraiman",
-        // Covers Math up to AP Pre-Calc, Chem, and Test Prep
         subjects: [
             "Math", "Algebra 1", "Algebra 2", "Geometry", 
             "Pre-Calculus", "AP Pre-Calculus",
@@ -52,16 +49,15 @@ const tutors = [
             "SAT Prep", "ACT Prep", "Test Prep"
         ],
         bio: "Focused on building strong foundations in Math and Chemistry.",
-        school: "College Name Here", // Edit this
-        major: "Major Here", // Edit this
-        gpa: "GPA / SAT Score", // Edit this
-        hobbies: "Hobby 1, Hobby 2", // Edit this
+        school: "College Name Here", 
+        major: "Major Here", 
+        gpa: "GPA / SAT Score", 
+        hobbies: "Hobby 1, Hobby 2", 
         detailedBio: "I help students master math concepts from 3rd grade through AP Pre-Calculus. I also provide tutoring for High School Chemistry and standardized test preparation.",
         img: "images/profilepic.png"
     },
     {
         name: "Lillian Zghaib",
-        // Covers English, Reading, Writing, Lit
         subjects: [
             "English", "English Lang", "Reading", "Writing", 
             "Essay Writing", "Grammar", "Vocabulary",
@@ -69,10 +65,10 @@ const tutors = [
             "College Essays", "Creative Writing"
         ],
         bio: "Specialist in English Literature, Writing, and Composition.",
-        school: "College Name Here", // Edit this
-        major: "English/Literature", // Edit this
-        gpa: "GPA / SAT Score", // Edit this
-        hobbies: "Hobby 1, Hobby 2", // Edit this
+        school: "College Name Here", 
+        major: "English/Literature", 
+        gpa: "GPA / SAT Score", 
+        hobbies: "Hobby 1, Hobby 2", 
         detailedBio: "I work with students from grades 3-12 to improve their reading comprehension and writing skills. I specialize in AP Literature and helping refine essays.",
         img: "images/profilepic.png"
     }
@@ -86,55 +82,36 @@ function searchTutors() {
     resultsContainer.innerHTML = "";
 
     if (input.trim() === "") {
-        resultsContainer.innerHTML = "<p style='color:white;'>Please enter a subject to search!</p>";
+        // Optional: You can clear the results or show a "Type to search" message
         return;
     }
 
     const filteredTutors = tutors.filter(tutor => {
-        // Checks if input matches a subject OR the tutor's name
         const matchesSubject = tutor.subjects.some(sub => sub.toLowerCase().includes(input));
         const matchesName = tutor.name.toLowerCase().includes(input);
         return matchesSubject || matchesName;
     });
 
     if (filteredTutors.length === 0) {
-        resultsContainer.innerHTML = "<p style='color:white;'>No coaches found for this fight. Try another subject!</p>";
+        resultsContainer.innerHTML = "<p style='color:white; font-size: 1.2rem; margin-top: 2rem;'>No coaches found for this fight. Try another subject!</p>";
     } else {
-        filteredTutors.forEach(tutor => {
-            const card = createTutorCard(tutor); // Uses the vertical card style
-            resultsContainer.appendChild(card);
+        filteredTutors.forEach((tutor, index) => {
+            // UPDATED: Now calls createTeamRow instead of createTutorCard
+            const row = createTeamRow(tutor, index); 
+            resultsContainer.appendChild(row);
         });
     }
 }
 
-// 3. Helper: Create Vertical Card (For Home Page Search)
-function createTutorCard(tutor) {
-    const card = document.createElement('div');
-    card.className = 'tutor-card';
-    
-    // We only show the first 3-4 subjects on the small card to keep it clean
-    // The .slice(0, 3) part does this.
-    const displaySubjects = tutor.subjects.slice(0, 3).join(", ") + (tutor.subjects.length > 3 ? "..." : "");
-
-    card.innerHTML = `
-        <h3>${tutor.name}</h3>
-        <p class="subjects"><strong>Specialties:</strong> ${displaySubjects}</p>
-        <p class="bio">${tutor.bio}</p>
-        <div class="card-footer">
-            <button class="btn-book" onclick="bookTutor('${tutor.name}')">Book Now</button>
-        </div>
-    `;
-    return card;
-}
-
-// 4. Helper: Create Horizontal Row (For Team Page)
+// 3. Helper: Create Horizontal Row (Used by BOTH Home and Team Pages)
 function createTeamRow(tutor, index) {
     const row = document.createElement('div');
     row.className = 'tutor-row';
     
-    const detailsId = `details-${index}`;
+    // Create a unique ID based on index to handle toggling
+    const detailsId = `details-${index}-${Math.floor(Math.random() * 1000)}`; 
 
-    // For the team page, we show a few more subjects, but still truncate if it's huge
+    // Helper to truncate subjects text if it's too long
     const displaySubjects = tutor.subjects.slice(0, 5).join(", ") + (tutor.subjects.length > 5 ? ", and more..." : "");
 
     row.innerHTML = `
@@ -173,7 +150,7 @@ function createTeamRow(tutor, index) {
     return row;
 }
 
-// 5. Function to Toggle the "Expand" section
+// 4. Toggle Details Animation
 function toggleDetails(id, btn) {
     const details = document.getElementById(id);
     const icon = btn.querySelector('i');
@@ -187,7 +164,7 @@ function toggleDetails(id, btn) {
     }
 }
 
-// 6. Book Tutor Function
+// 5. Book Tutor Function
 function bookTutor(tutorName) {
     const contactSection = document.getElementById('contact'); 
     const messageBox = document.querySelector('textarea');    
@@ -201,13 +178,11 @@ function bookTutor(tutorName) {
     }
 }
 
-// 7. Event Listeners
+// 6. Event Listeners
 const searchInput = document.getElementById('searchInput');
 if (searchInput) {
-    searchInput.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            searchTutors();
-        }
+    searchInput.addEventListener("keyup", function(event) { // Changed to keyup for instant results, or stick to keypress 'Enter'
+        searchTutors();
     });
 }
 

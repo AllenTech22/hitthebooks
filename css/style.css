@@ -95,7 +95,7 @@ nav {
     gap: 10px;
 }
 
-/* UPDATED: Added input[type="email"] so the email box gets styled too! */
+/* Input Styling */
 input[type="text"], 
 input[type="email"] {
     flex: 1;
@@ -112,7 +112,7 @@ input[type="email"]:focus {
     outline: 2px solid var(--accent-red);
 }
 
-/* BUTTON STYLES (UPDATED FOR TEXT CENTERING) */
+/* BUTTON STYLES */
 .btn-primary {
     padding: 1rem 2rem;
     background-color: var(--accent-red);
@@ -124,7 +124,7 @@ input[type="email"]:focus {
     font-size: 1rem;
     transition: background 0.3s;
     
-    /* Ensures text is dead center */
+    /* Center Text */
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -140,11 +140,12 @@ input[type="email"]:focus {
 #tutor-results {
     margin-top: 2rem;
     width: 100%;
-    max-width: 800px;
+    max-width: 900px; /* Limits width so rows don't stretch forever */
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Stack rows vertically */
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center; /* Center the rows */
 }
 
 /* Contact / Footer Section */
@@ -177,12 +178,12 @@ footer {
 }
 
 .contact-links i {
-    color: var(--accent-red); /* Makes the icons red */
+    color: var(--accent-red);
     font-size: 1.2rem;
-    width: 25px; /* Ensures text aligns perfectly */
+    width: 25px; 
 }
 
-/* New Social Buttons */
+/* Social Buttons */
 .social-icons {
     margin-top: 1.5rem;
     display: flex;
@@ -208,15 +209,14 @@ footer {
     color: white;
 }
 
-/* Social Button Hover Effects */
 .social-btn:hover {
     border-color: var(--accent-red);
-    background-color: rgba(211, 47, 47, 0.1); /* Subtle red tint */
-    transform: translateX(5px); /* Little punch movement */
+    background-color: rgba(211, 47, 47, 0.1); 
+    transform: translateX(5px);
 }
 
-.social-btn.whatsapp:hover i { color: #25D366; } /* WhatsApp Green on hover */
-.social-btn.facebook:hover i { color: #1877F2; } /* Facebook Blue on hover */
+.social-btn.whatsapp:hover i { color: #25D366; }
+.social-btn.facebook:hover i { color: #1877F2; }
 
 /* Form Styling */
 .contact-form form {
@@ -226,7 +226,6 @@ footer {
     width: 300px;
 }
 
-/* UPDATED: Ensures the inputs in the contact form match the textarea exactly */
 .contact-form input,
 .contact-form textarea {
     padding: 1rem;
@@ -243,108 +242,7 @@ footer {
 }
 
 /* ========================================= */
-/* TUTOR CARD STYLES (VERTICAL - HOME PAGE) */
-/* ========================================= */
-
-.tutor-card {
-    background-color: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.5rem;
-    width: 300px;
-    text-align: left;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    
-    /* Flex setup for internal alignment */
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Matches height of other cards in the same row */
-}
-
-.tutor-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-red);
-}
-
-.tutor-card h3 {
-    color: var(--accent-red);
-    margin-bottom: 0.5rem;
-    font-size: 1.4rem;
-    
-    /* Handle long names gracefully */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.tutor-card .subjects {
-    color: white;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    
-    /* FORCE 3 LINES OF SPACE */
-    min-height: 4.2em; 
-    line-height: 1.4em;
-    
-    /* Cut off text if it exceeds 3 lines */
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.tutor-card .bio {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-    
-    /* FORCE 3 LINES OF SPACE */
-    min-height: 4.5em; 
-    line-height: 1.5em;
-    
-    /* Cut off text if it exceeds 3 lines */
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* Footer always stays at the bottom */
-.card-footer {
-    margin-top: auto; 
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.btn-book {
-    background-color: transparent;
-    border: 1px solid var(--accent-red);
-    color: var(--accent-red);
-    padding: 0.5rem 2rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
-    width: 100%;
-    text-align: center;
-    
-    /* Fix for button text centering */
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.btn-book:hover {
-    background-color: var(--accent-red);
-    color: white;
-}
-
-
-/* ========================================= */
-/* TEAM PAGE - HORIZONTAL ROW STYLES       */
+/* TUTOR ROW STYLES (Used for Search & Team) */
 /* ========================================= */
 
 .tutor-row {
@@ -352,9 +250,9 @@ footer {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     width: 100%;
-    max-width: 900px; /* Limits width so it doesn't look too stretched */
+    /* No Max Width here, handled by container */
     margin-bottom: 1.5rem;
-    overflow: hidden; /* Contains the expanded content */
+    overflow: hidden; 
     transition: border-color 0.3s;
 }
 
@@ -362,7 +260,7 @@ footer {
     border-color: var(--accent-red);
 }
 
-/* 1. Visible Header (Flexbox Row) */
+/* Visible Header (Flexbox Row) */
 .row-header {
     display: flex;
     align-items: center;
@@ -374,14 +272,14 @@ footer {
 .profile-pic {
     width: 100px;
     height: 100px;
-    border-radius: 50%; /* Circle shape */
+    border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--accent-red);
 }
 
 /* Middle Info Text */
 .row-info {
-    flex: 1; /* Takes up all remaining space */
+    flex: 1; 
 }
 
 .row-info h3 {
@@ -409,7 +307,29 @@ footer {
     min-width: 120px;
 }
 
-/* The little arrow button */
+/* Book Button */
+.btn-book {
+    background-color: transparent;
+    border: 1px solid var(--accent-red);
+    color: var(--accent-red);
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.btn-book:hover {
+    background-color: var(--accent-red);
+    color: white;
+}
+
+/* Expand Arrow */
 .btn-expand {
     background: none;
     border: none;
@@ -423,30 +343,29 @@ footer {
     color: white;
 }
 
-/* Rotate animation for the arrow */
 .rotate {
     transform: rotate(180deg);
 }
 
-/* 2. Hidden Details Section */
+/* Hidden Details Section */
 .row-details {
-    max-height: 0; /* Hidden by default */
+    max-height: 0;
     overflow: hidden;
-    background-color: rgba(0,0,0,0.2); /* Slightly darker background */
-    transition: max-height 0.5s ease-out; /* Smooth slide animation */
-    padding: 0 1.5rem; /* No vertical padding when closed */
+    background-color: rgba(0,0,0,0.2);
+    transition: max-height 0.5s ease-out;
+    padding: 0 1.5rem;
 }
 
 .row-details.show {
-    max-height: 500px; /* Arbitrary large height to allow expansion */
-    padding: 1.5rem; /* Add padding when open */
+    max-height: 500px; 
+    padding: 1.5rem; 
     border-top: 1px solid var(--border-color);
 }
 
-/* Grid for School, Major, GPA, Hobbies */
+/* Grid for Stats */
 .details-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
@@ -459,36 +378,17 @@ footer {
     padding-top: 1rem;
 }
 
-/* Mobile Responsiveness for Team Rows */
-@media (max-width: 768px) {
-    .row-header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .row-actions {
-        width: 100%;
-        flex-direction: row;
-        justify-content: center;
-    }
-    
-    .details-grid {
-        grid-template-columns: 1fr; /* Stack detailed stats */
-    }
-}
-
 /* ========================================= */
 /* ABOUT PAGE STYLES                         */
 /* ========================================= */
 
 .about-container {
     max-width: 1000px;
-    margin: 0 auto; /* Centers the content */
+    margin: 0 auto;
     padding: 0 2rem 4rem 2rem;
     width: 100%;
 }
 
-/* Mission Section */
 .about-section {
     display: flex;
     align-items: center;
@@ -517,10 +417,9 @@ footer {
     opacity: 0.8;
 }
 
-/* Values Grid */
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
@@ -554,14 +453,6 @@ footer {
     font-size: 0.95rem;
 }
 
-/* Mobile Responsiveness for About Page */
-@media (max-width: 768px) {
-    .about-section {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
 /* ========================================= */
 /* PLANS & PRICING PAGE STYLES               */
 /* ========================================= */
@@ -573,18 +464,15 @@ footer {
     width: 100%;
 }
 
-/* 1. Free Banner Style (Horizontal Layout) */
 .free-banner {
     background: linear-gradient(135deg, var(--surface-color) 0%, #2a1a1a 100%);
     border: 2px solid var(--accent-red);
     border-radius: 12px;
     padding: 2rem;
     margin-bottom: 4rem;
-    box-shadow: 0 0 20px rgba(211, 47, 47, 0.2); /* Red Glow */
-    
-    /* Horizontal Layout: Icon - Text - Button */
+    box-shadow: 0 0 20px rgba(211, 47, 47, 0.2); 
     display: flex;
-    align-items: center; /* Vertically Centers Everything */
+    align-items: center; 
     justify-content: space-between;
     gap: 2rem;
 }
@@ -592,11 +480,11 @@ footer {
 .banner-icon {
     font-size: 3rem;
     color: var(--accent-red);
-    flex-shrink: 0; /* Prevents icon from shrinking */
+    flex-shrink: 0;
 }
 
 .banner-text {
-    flex: 1; /* Takes up available space */
+    flex: 1;
 }
 
 .banner-text h2 {
@@ -609,7 +497,6 @@ footer {
     color: var(--text-secondary);
 }
 
-/* 2. Pricing Grid */
 .section-title {
     text-align: center;
     font-size: 2rem;
@@ -676,7 +563,6 @@ footer {
     line-height: 1.4;
 }
 
-/* "Most Popular" Card Styling */
 .price-card.popular {
     border-color: var(--accent-red);
     background: linear-gradient(to bottom, var(--surface-color), #220f0f);
@@ -696,7 +582,6 @@ footer {
     text-transform: uppercase;
 }
 
-/* 3. Bundles Section */
 .bundles-section {
     background-color: var(--surface-color);
     border-radius: 12px;
@@ -744,7 +629,7 @@ footer {
     
     /* 1. Fix Navigation Alignment */
     nav {
-        flex-direction: column; /* Stack Logo on top of links */
+        flex-direction: column;
         gap: 1rem;
         padding: 1rem;
     }
@@ -752,22 +637,22 @@ footer {
     .nav-links {
         width: 100%;
         display: flex;
-        justify-content: center; /* perfectly centers the group */
-        gap: 1.5rem; /* Uniform spacing between words */
+        justify-content: center;
+        gap: 1.5rem;
     }
 
     .nav-links a {
-        margin-left: 0; /* REMOVES the "About" misalignment */
+        margin-left: 0;
         font-size: 1rem;
     }
 
     /* 2. Fix Search Bar Text */
     .search-container {
-        padding: 0 1rem; /* Prevents it from touching the edges */
+        padding: 0 1rem;
     }
     
     input[type="text"] {
-        font-size: 16px; /* Prevents iOS from zooming in weirdly */
+        font-size: 16px;
         padding: 0.8rem;
     }
 
@@ -778,17 +663,17 @@ footer {
 
     .bundle-list {
         flex-direction: column;
-        gap: 2rem; /* More space between items */
+        gap: 2rem;
     }
 
     .bundle-list li {
-        flex-direction: column; /* Icon on top, Text on bottom */
-        text-align: center;      /* Centers the text */
+        flex-direction: column;
+        text-align: center;
         align-items: center;
     }
 
     .bundle-list i {
-        margin-bottom: 0.5rem;   /* Space between icon and text */
+        margin-bottom: 0.5rem;
         font-size: 1.5rem;
     }
 
@@ -796,5 +681,21 @@ footer {
     .free-banner {
         flex-direction: column;
         text-align: center;
+    }
+
+    /* 5. Stack Tutor Rows on Mobile */
+    .row-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .row-actions {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .details-grid {
+        grid-template-columns: 1fr;
     }
 }
