@@ -242,7 +242,7 @@ footer {
     margin-bottom: 0;
 }
 
-/* Custom Dropdown Arrow */
+/* Custom Dropdown Arrow & FIX for Mobile Text Overlap */
 .contact-form select {
     appearance: none;
     -webkit-appearance: none;
@@ -251,6 +251,14 @@ footer {
     background-position: right 1rem center;
     background-size: 0.8rem;
     cursor: pointer;
+    
+    /* FIX: Adds padding so text doesn't hit the arrow */
+    padding-right: 3rem !important; 
+    
+    /* FIX: Cuts off text cleanly if it's still too long */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .contact-form textarea {
