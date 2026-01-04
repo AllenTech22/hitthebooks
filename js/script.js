@@ -14,12 +14,12 @@ const tutors = [
             "Material Science", "Mechanics of Materials",
             "SAT Prep", "ACT Prep", "Test Prep"
         ],
-        bio: "Mechanical Engineering specialist. Tutoring Math (Grade 3 to Diff Eq), Physics, and Engineering.",
-        school: "College Name Here", 
+        bio: "STEM specialist. Tutoring Math, Physics, Chemistry, and standardized test prep.",
+        school: "Boston University / Staten Island Technical HS", 
         major: "Mechanical Engineering", 
-        gpa: "Scores/GPA Here", 
-        hobbies: "Hobbies Here", 
-        detailedBio: "I tutor any math level from 3rd grade up to Differential Equations. I also specialize in college-level Physics (up to E&M), Chemistry, and core Mechanical Engineering courses like Thermo, Fluids, and Materials.",
+        gpa: "3.98 GPA / 1510 SAT", 
+        hobbies: "Soccer, Jiu Jitsu, Music", 
+        detailedBio: "With 4 years of experience tutoring students from elementary to college level, I have extensive experience teaching STEM topics, including AP courses and middle school curriculum. I have helped students gain acceptance into specialized high schools and increase their SAT scores by 250+ points.",
         img: "images/allen_profile.jpeg" 
     },
     {
