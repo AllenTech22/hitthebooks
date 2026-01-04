@@ -253,7 +253,7 @@ footer {
     cursor: pointer;
     
     /* FIX: Adds padding so text doesn't hit the arrow */
-    padding-right: 3rem !important; 
+    padding-right: 4rem !important; 
     
     /* FIX: Cuts off text cleanly if it's still too long */
     white-space: nowrap;
