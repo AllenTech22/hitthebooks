@@ -656,7 +656,14 @@ footer {
         padding: 0.8rem;
     }
 
-    /* 3. Fix "Fight Camp" Text (Plans Page) */
+    /* 3. Fix About Page Mission Section (Icon on top) */
+    .about-section {
+        flex-direction: column-reverse; /* Flips the order so icon is on top */
+        text-align: center;
+        gap: 2rem;
+    }
+
+    /* 4. Fix "Fight Camp" Text (Plans Page) */
     .bundles-section {
         padding: 2rem 1rem;
     }
@@ -677,13 +684,13 @@ footer {
         font-size: 1.5rem;
     }
 
-    /* 4. Fix Free Banner on Mobile */
+    /* 5. Fix Free Banner on Mobile */
     .free-banner {
         flex-direction: column;
         text-align: center;
     }
 
-    /* 5. Stack Tutor Rows on Mobile */
+    /* 6. Stack Tutor Rows on Mobile */
     .row-header {
         flex-direction: column;
         text-align: center;
