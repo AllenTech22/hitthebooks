@@ -95,7 +95,9 @@ nav {
     gap: 10px;
 }
 
-input[type="text"] {
+/* UPDATED: Added input[type="email"] so the email box gets styled too! */
+input[type="text"], 
+input[type="email"] {
     flex: 1;
     padding: 1rem;
     border-radius: 8px;
@@ -105,7 +107,8 @@ input[type="text"] {
     font-size: 1rem;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="email"]:focus {
     outline: 2px solid var(--accent-red);
 }
 
@@ -223,12 +226,19 @@ footer {
     width: 300px;
 }
 
+/* UPDATED: Ensures the inputs in the contact form match the textarea exactly */
+.contact-form input,
 .contact-form textarea {
     padding: 1rem;
     border-radius: 8px;
     border: 1px solid var(--border-color);
     background-color: var(--bg-color);
     color: white;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.contact-form textarea {
     resize: vertical;
 }
 
