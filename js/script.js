@@ -20,7 +20,7 @@ const tutors = [
         gpa: "GPA / SAT Score", 
         hobbies: "Hobby 1, Hobby 2", 
         detailedBio: "I can tutor any math level from 3rd grade up to Differential Equations. I also specialize in college-level Physics (up to E&M), Chemistry, and core Mechanical Engineering courses like Thermo and Fluids.",
-        img: "images/profilepic.png" 
+        img: "images/allen_profile.jpeg" 
     },
     {
         name: "Philip Zghaib",
