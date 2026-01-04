@@ -1,49 +1,79 @@
 // js/script.js
 
-// 1. The Data: List of Tutors
+// 1. The Data: List of Real Tutors
 const tutors = [
     {
-        name: "Sarah Jenkins",
-        subjects: ["Calculus", "Algebra", "SAT Math"],
-        bio: "Math major with 5 years of teaching experience.",
-        school: "Columbia University",
-        major: "Mathematics",
-        gpa: "3.9 GPA / 1580 SAT",
-        hobbies: "Chess, Hiking, Piano",
-        detailedBio: "I specialize in helping students overcome math anxiety. My teaching style focuses on breaking down complex problems into simple, manageable steps.",
+        name: "Allen Fraiman",
+        // Comprehensive list covering Math (Grade 3 - Diff Eq), Physics, Engineering, Chem, and Test Prep
+        subjects: [
+            "Math", "Algebra 1", "Algebra 2", "Geometry", "Trigonometry", 
+            "Pre-Calculus", "Calculus 1", "Calculus 2", "Calculus 3", 
+            "Differential Equations", "Statistics", "AP Statistics", "AP Calculus",
+            "Physics", "Physics 1", "Physics 2", "E&M", "AP Physics",
+            "Chemistry", "General Chemistry",
+            "Mechanical Engineering", "Thermodynamics", "Fluid Mechanics", 
+            "Material Science", "Mechanics of Materials",
+            "SAT Prep", "ACT Prep", "Test Prep"
+        ],
+        bio: "Specializes in advanced Mathematics, Physics, and Mechanical Engineering courses.",
+        school: "College Name Here", // Edit this
+        major: "Mechanical Engineering", // Edit this
+        gpa: "GPA / SAT Score", // Edit this
+        hobbies: "Hobby 1, Hobby 2", // Edit this
+        detailedBio: "I can tutor any math level from 3rd grade up to Differential Equations. I also specialize in college-level Physics (up to E&M), Chemistry, and core Mechanical Engineering courses like Thermo and Fluids.",
         img: "images/profilepic.png" 
     },
     {
-        name: "David Chen",
-        subjects: ["Physics", "Calculus", "Math"],
-        bio: "Engineering graduate who loves mechanics.",
-        school: "Georgia Tech",
-        major: "Mechanical Engineering",
-        gpa: "4.0 GPA",
-        hobbies: "Robotics, Cycling, Sci-Fi Novels",
-        detailedBio: "Physics doesn't have to be scary. I use real-world examples to explain forces and motion, making abstract concepts easy to visualize.",
+        name: "Philip Zghaib",
+        // Covers Math up to Calc AB, Finance, Econ, Psych, and Test Prep
+        subjects: [
+            "Math", "Algebra 1", "Algebra 2", "Geometry", "Pre-Calculus", 
+            "Calculus", "AP Calculus AB", 
+            "Finance", "Corporate Finance",
+            "Economics", "AP Macroeconomics", 
+            "Psychology", "AP Psychology",
+            "SAT Prep", "ACT Prep", "Test Prep"
+        ],
+        bio: "Expert in Mathematics, Finance, and AP Social Sciences.",
+        school: "College Name Here", // Edit this
+        major: "Finance/Economics", // Edit this
+        gpa: "GPA / SAT Score", // Edit this
+        hobbies: "Hobby 1, Hobby 2", // Edit this
+        detailedBio: "I tutor math students from elementary school up to AP Calculus AB. My other specialties include Finance, AP Macroeconomics, and AP Psychology, along with standardized test prep.",
         img: "images/profilepic.png"
     },
     {
-        name: "Emily Davis",
-        subjects: ["English", "Literature", "Essay Writing"],
-        bio: "Published author and creative writing coach.",
-        school: "NYU",
-        major: "English Literature",
-        gpa: "3.8 GPA",
-        hobbies: "Poetry, Theater, Coffee",
-        detailedBio: "I help students find their unique voice in writing. Whether it's a college essay or a literary analysis, we will craft something you are proud of.",
+        name: "Sam Fraiman",
+        // Covers Math up to AP Pre-Calc, Chem, and Test Prep
+        subjects: [
+            "Math", "Algebra 1", "Algebra 2", "Geometry", 
+            "Pre-Calculus", "AP Pre-Calculus",
+            "Chemistry", "High School Chemistry",
+            "SAT Prep", "ACT Prep", "Test Prep"
+        ],
+        bio: "Focused on building strong foundations in Math and Chemistry.",
+        school: "College Name Here", // Edit this
+        major: "Major Here", // Edit this
+        gpa: "GPA / SAT Score", // Edit this
+        hobbies: "Hobby 1, Hobby 2", // Edit this
+        detailedBio: "I help students master math concepts from 3rd grade through AP Pre-Calculus. I also provide tutoring for High School Chemistry and standardized test preparation.",
         img: "images/profilepic.png"
     },
     {
-        name: "Michael Ross",
-        subjects: ["Biology", "Anatomy", "MCAT Prep"],
-        bio: "Pre-med student with a passion for life sciences.",
-        school: "Johns Hopkins",
-        major: "Biology",
-        gpa: "3.95 GPA / 520 MCAT",
-        hobbies: "Gardening, Cooking, Basketball",
-        detailedBio: "Biology is the study of life, and I bring that life into every lesson. I focus on memory techniques and understanding systems.",
+        name: "Lillian Zghaib",
+        // Covers English, Reading, Writing, Lit
+        subjects: [
+            "English", "English Lang", "Reading", "Writing", 
+            "Essay Writing", "Grammar", "Vocabulary",
+            "Literature", "AP Literature", 
+            "College Essays", "Creative Writing"
+        ],
+        bio: "Specialist in English Literature, Writing, and Composition.",
+        school: "College Name Here", // Edit this
+        major: "English/Literature", // Edit this
+        gpa: "GPA / SAT Score", // Edit this
+        hobbies: "Hobby 1, Hobby 2", // Edit this
+        detailedBio: "I work with students from grades 3-12 to improve their reading comprehension and writing skills. I specialize in AP Literature and helping refine essays.",
         img: "images/profilepic.png"
     }
 ];
@@ -61,6 +91,7 @@ function searchTutors() {
     }
 
     const filteredTutors = tutors.filter(tutor => {
+        // Checks if input matches a subject OR the tutor's name
         const matchesSubject = tutor.subjects.some(sub => sub.toLowerCase().includes(input));
         const matchesName = tutor.name.toLowerCase().includes(input);
         return matchesSubject || matchesName;
@@ -70,21 +101,24 @@ function searchTutors() {
         resultsContainer.innerHTML = "<p style='color:white;'>No coaches found for this fight. Try another subject!</p>";
     } else {
         filteredTutors.forEach(tutor => {
-            const card = createTutorCard(tutor);
+            const card = createTutorCard(tutor); // Uses the vertical card style
             resultsContainer.appendChild(card);
         });
     }
 }
 
-// 3. Helper: Create Vertical Card (Home Page Search)
+// 3. Helper: Create Vertical Card (For Home Page Search)
 function createTutorCard(tutor) {
     const card = document.createElement('div');
     card.className = 'tutor-card';
     
-    // Updated Button with onclick event
+    // We only show the first 3-4 subjects on the small card to keep it clean
+    // The .slice(0, 3) part does this.
+    const displaySubjects = tutor.subjects.slice(0, 3).join(", ") + (tutor.subjects.length > 3 ? "..." : "");
+
     card.innerHTML = `
         <h3>${tutor.name}</h3>
-        <p class="subjects"><strong>Specialties:</strong> ${tutor.subjects.join(", ")}</p>
+        <p class="subjects"><strong>Specialties:</strong> ${displaySubjects}</p>
         <p class="bio">${tutor.bio}</p>
         <div class="card-footer">
             <button class="btn-book" onclick="bookTutor('${tutor.name}')">Book Now</button>
@@ -93,20 +127,23 @@ function createTutorCard(tutor) {
     return card;
 }
 
-// 4. Helper: Create Horizontal Row (Team Page)
+// 4. Helper: Create Horizontal Row (For Team Page)
 function createTeamRow(tutor, index) {
     const row = document.createElement('div');
     row.className = 'tutor-row';
+    
     const detailsId = `details-${index}`;
 
-    // Updated Button with onclick event
+    // For the team page, we show a few more subjects, but still truncate if it's huge
+    const displaySubjects = tutor.subjects.slice(0, 5).join(", ") + (tutor.subjects.length > 5 ? ", and more..." : "");
+
     row.innerHTML = `
         <div class="row-header">
             <img src="${tutor.img}" alt="${tutor.name}" class="profile-pic">
             
             <div class="row-info">
                 <h3>${tutor.name}</h3>
-                <p class="subjects"><strong>Specialties:</strong> ${tutor.subjects.join(", ")}</p>
+                <p class="subjects"><strong>Specialties:</strong> ${displaySubjects}</p>
                 <p class="bio-short">${tutor.bio}</p>
             </div>
 
@@ -127,13 +164,16 @@ function createTeamRow(tutor, index) {
             </div>
             <div class="details-bio">
                 <p>${tutor.detailedBio}</p>
+                <p style="margin-top:1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                    <strong>All Subjects:</strong> ${tutor.subjects.join(", ")}
+                </p>
             </div>
         </div>
     `;
     return row;
 }
 
-// 5. Toggle Details Animation
+// 5. Function to Toggle the "Expand" section
 function toggleDetails(id, btn) {
     const details = document.getElementById(id);
     const icon = btn.querySelector('i');
@@ -147,23 +187,16 @@ function toggleDetails(id, btn) {
     }
 }
 
-// 6. NEW: Book Tutor Function (Handles Scrolling & Pre-filling)
+// 6. Book Tutor Function
 function bookTutor(tutorName) {
-    // 1. Find the contact section and textarea
     const contactSection = document.getElementById('contact'); 
     const messageBox = document.querySelector('textarea');    
 
     if (contactSection && messageBox) {
-        // 2. Scroll to the footer smoothly
         contactSection.scrollIntoView({ behavior: 'smooth' });
-
-        // 3. Pre-fill the text area
         messageBox.value = `Hi, I am interested in booking a session with ${tutorName}.`;
-        
-        // 4. Briefly highlight the message box so they see it
         messageBox.focus();
     } else {
-        // Fallback if we are on a page without a contact form
         alert(`Please email us at email@hitthebooks.com to book ${tutorName}!`);
     }
 }
