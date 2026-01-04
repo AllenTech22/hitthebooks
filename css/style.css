@@ -726,21 +726,65 @@ footer {
     color: var(--accent-red);
 }
 
-/* Mobile Responsiveness for Plans */
+/* ========================================= */
+/* MOBILE OPTIMIZATIONS (The Final Polish)   */
+/* ========================================= */
+
 @media (max-width: 768px) {
+    
+    /* 1. Fix Navigation Alignment */
+    nav {
+        flex-direction: column; /* Stack Logo on top of links */
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* perfectly centers the group */
+        gap: 1.5rem; /* Uniform spacing between words */
+    }
+
+    .nav-links a {
+        margin-left: 0; /* REMOVES the "About" misalignment */
+        font-size: 1rem;
+    }
+
+    /* 2. Fix Search Bar Text */
+    .search-container {
+        padding: 0 1rem; /* Prevents it from touching the edges */
+    }
+    
+    input[type="text"] {
+        font-size: 16px; /* Prevents iOS from zooming in weirdly */
+        padding: 0.8rem;
+    }
+
+    /* 3. Fix "Fight Camp" Text (Plans Page) */
+    .bundles-section {
+        padding: 2rem 1rem;
+    }
+
+    .bundle-list {
+        flex-direction: column;
+        gap: 2rem; /* More space between items */
+    }
+
+    .bundle-list li {
+        flex-direction: column; /* Icon on top, Text on bottom */
+        text-align: center;      /* Centers the text */
+        align-items: center;
+    }
+
+    .bundle-list i {
+        margin-bottom: 0.5rem;   /* Space between icon and text */
+        font-size: 1.5rem;
+    }
+
+    /* 4. Fix Free Banner on Mobile */
     .free-banner {
         flex-direction: column;
         text-align: center;
-    }
-    
-    .bundle-list {
-        flex-direction: column;
-        align-items: start;
-        text-align: left;
-    }
-    
-    .bundle-list li {
-        width: 100%;
-        justify-content: flex-start;
     }
 }
