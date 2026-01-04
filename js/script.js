@@ -54,7 +54,7 @@ const tutors = [
         gpa: "Scores/GPA Here", 
         hobbies: "Hobbies Here", 
         detailedBio: "I help students master math concepts from 3rd grade through AP Pre-Calculus. I also provide dedicated tutoring for High School Chemistry and test preparation.",
-        img: "images/profilepic.png"
+        img: "images/sam_profile.png"
     },
     {
         name: "Lillian Zghaib",
