@@ -7,7 +7,8 @@
     <title>Hit The Books | Find Your Coach</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥊</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥊</text></svg>">
 </head>
 
 <body>
@@ -56,10 +57,15 @@
 
             <div class="contact-form">
                 <h3>Send a Message</h3>
-                <form>
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="text" placeholder="Your Email" required>
-                    <textarea rows="4" placeholder="How can we help?"></textarea>
+
+                <form action="https://formspree.io/f/mgovpbyl" method="POST">
+
+                    <input type="text" name="name" placeholder="Your Name" required>
+
+                    <input type="email" name="email" placeholder="Your Email" required>
+
+                    <textarea name="message" rows="4" placeholder="How can we help?"></textarea>
+
                     <button type="submit" class="btn-primary">Send</button>
                 </form>
             </div>
