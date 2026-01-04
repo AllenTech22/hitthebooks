@@ -1,75 +1,79 @@
 // js/script.js
 
-// 1. The Data: List of Real Tutors
+// 1. The Data: Real Team & Generated Keywords
 const tutors = [
     {
         name: "Allen Fraiman",
+        // Extensive list covering Math (Elem -> Diff Eq), Physics, Eng, Chem
         subjects: [
             "Math", "Algebra 1", "Algebra 2", "Geometry", "Trigonometry", 
             "Pre-Calculus", "Calculus 1", "Calculus 2", "Calculus 3", 
             "Differential Equations", "Statistics", "AP Statistics", "AP Calculus",
-            "Physics", "Physics 1", "Physics 2", "E&M", "AP Physics",
+            "Physics", "Physics 1", "Physics 2", "E&M", "Electricity & Magnetism",
             "Chemistry", "General Chemistry",
             "Mechanical Engineering", "Thermodynamics", "Fluid Mechanics", 
             "Material Science", "Mechanics of Materials",
             "SAT Prep", "ACT Prep", "Test Prep"
         ],
-        bio: "Specializes in advanced Mathematics, Physics, and Mechanical Engineering courses.",
-        school: "College Name Here", 
-        major: "Mechanical Engineering", 
-        gpa: "GPA / SAT Score", 
-        hobbies: "Hobby 1, Hobby 2", 
-        detailedBio: "I can tutor any math level from 3rd grade up to Differential Equations. I also specialize in college-level Physics (up to E&M), Chemistry, and core Mechanical Engineering courses like Thermo and Fluids.",
-        img: "images/allen_profile.jpeg" 
+        bio: "Mechanical Engineering specialist. Tutoring Math (Grade 3 to Diff Eq), Physics, and Engineering.",
+        school: "College Name Here", // Edit this
+        major: "Mechanical Engineering", // Edit this
+        gpa: "Scores/GPA Here", // Edit this
+        hobbies: "Hobbies Here", // Edit this
+        detailedBio: "I tutor any math level from 3rd grade up to Differential Equations. I also specialize in college-level Physics (up to E&M), Chemistry, and core Mechanical Engineering courses like Thermo, Fluids, and Materials.",
+        img: "images/allen_profile.jpeg" // Updated based on your snippet
     },
     {
         name: "Philip Zghaib",
+        // Math up to Calc AB, Finance, Econ, Psych
         subjects: [
             "Math", "Algebra 1", "Algebra 2", "Geometry", "Pre-Calculus", 
             "Calculus", "AP Calculus AB", 
-            "Finance", "Corporate Finance",
+            "Finance", "Corporate Finance", "Business",
             "Economics", "AP Macroeconomics", 
             "Psychology", "AP Psychology",
             "SAT Prep", "ACT Prep", "Test Prep"
         ],
-        bio: "Expert in Mathematics, Finance, and AP Social Sciences.",
-        school: "College Name Here", 
-        major: "Finance/Economics", 
-        gpa: "GPA / SAT Score", 
-        hobbies: "Hobby 1, Hobby 2", 
-        detailedBio: "I tutor math students from elementary school up to AP Calculus AB. My other specialties include Finance, AP Macroeconomics, and AP Psychology, along with standardized test prep.",
+        bio: "Expert in Mathematics, Finance, Economics, and AP Psychology.",
+        school: "College Name Here", // Edit this
+        major: "Finance/Economics", // Edit this
+        gpa: "Scores/GPA Here", // Edit this
+        hobbies: "Hobbies Here", // Edit this
+        detailedBio: "I tutor math students from grades 3 up to AP Calculus AB. My specialties also include Finance, AP Macroeconomics, and AP Psychology, along with standardized test prep.",
         img: "images/profilepic.png"
     },
     {
         name: "Sam Fraiman",
+        // Math up to AP Pre-Calc, Chem
         subjects: [
             "Math", "Algebra 1", "Algebra 2", "Geometry", 
             "Pre-Calculus", "AP Pre-Calculus",
             "Chemistry", "High School Chemistry",
             "SAT Prep", "ACT Prep", "Test Prep"
         ],
-        bio: "Focused on building strong foundations in Math and Chemistry.",
-        school: "College Name Here", 
-        major: "Major Here", 
-        gpa: "GPA / SAT Score", 
-        hobbies: "Hobby 1, Hobby 2", 
-        detailedBio: "I help students master math concepts from 3rd grade through AP Pre-Calculus. I also provide tutoring for High School Chemistry and standardized test preparation.",
+        bio: "Building strong foundations in K-12 Math and Chemistry.",
+        school: "College Name Here", // Edit this
+        major: "Major Here", // Edit this
+        gpa: "Scores/GPA Here", // Edit this
+        hobbies: "Hobbies Here", // Edit this
+        detailedBio: "I help students master math concepts from 3rd grade through AP Pre-Calculus. I also provide dedicated tutoring for High School Chemistry and test preparation.",
         img: "images/profilepic.png"
     },
     {
         name: "Lillian Zghaib",
+        // English, Writing, Lit
         subjects: [
-            "English", "English Lang", "Reading", "Writing", 
+            "English", "English Language", "Reading", "Writing", 
             "Essay Writing", "Grammar", "Vocabulary",
             "Literature", "AP Literature", 
             "College Essays", "Creative Writing"
         ],
-        bio: "Specialist in English Literature, Writing, and Composition.",
-        school: "College Name Here", 
-        major: "English/Literature", 
-        gpa: "GPA / SAT Score", 
-        hobbies: "Hobby 1, Hobby 2", 
-        detailedBio: "I work with students from grades 3-12 to improve their reading comprehension and writing skills. I specialize in AP Literature and helping refine essays.",
+        bio: "Specialist in English Literature, Writing, and Composition (Grades 3-12).",
+        school: "College Name Here", // Edit this
+        major: "English/Literature", // Edit this
+        gpa: "Scores/GPA Here", // Edit this
+        hobbies: "Hobbies Here", // Edit this
+        detailedBio: "I work with students from grades 3-12 to improve their reading comprehension and writing skills. I specialize in AP Literature and helping refine academic essays.",
         img: "images/profilepic.png"
     }
 ];
@@ -82,21 +86,21 @@ function searchTutors() {
     resultsContainer.innerHTML = "";
 
     if (input.trim() === "") {
-        // Optional: You can clear the results or show a "Type to search" message
         return;
     }
 
     const filteredTutors = tutors.filter(tutor => {
+        // Checks if input matches a subject OR the tutor's name
         const matchesSubject = tutor.subjects.some(sub => sub.toLowerCase().includes(input));
         const matchesName = tutor.name.toLowerCase().includes(input);
         return matchesSubject || matchesName;
     });
 
     if (filteredTutors.length === 0) {
-        resultsContainer.innerHTML = "<p style='color:white; font-size: 1.2rem; margin-top: 2rem;'>No coaches found for this fight. Try another subject!</p>";
+        resultsContainer.innerHTML = "<p style='color:white; font-size: 1.1rem; margin-top: 2rem;'>No coaches found for this fight. Try another subject!</p>";
     } else {
         filteredTutors.forEach((tutor, index) => {
-            // UPDATED: Now calls createTeamRow instead of createTutorCard
+            // Uses createTeamRow so search results look just like the team page (Horizontal)
             const row = createTeamRow(tutor, index); 
             resultsContainer.appendChild(row);
         });
@@ -108,11 +112,11 @@ function createTeamRow(tutor, index) {
     const row = document.createElement('div');
     row.className = 'tutor-row';
     
-    // Create a unique ID based on index to handle toggling
-    const detailsId = `details-${index}-${Math.floor(Math.random() * 1000)}`; 
+    // Create a unique ID based on index + random number to handle toggling in search results
+    const detailsId = `details-${index}-${Math.floor(Math.random() * 10000)}`; 
 
     // Helper to truncate subjects text if it's too long
-    const displaySubjects = tutor.subjects.slice(0, 5).join(", ") + (tutor.subjects.length > 5 ? ", and more..." : "");
+    const displaySubjects = tutor.subjects.slice(0, 6).join(", ") + (tutor.subjects.length > 6 ? ", and more..." : "");
 
     row.innerHTML = `
         <div class="row-header">
@@ -164,32 +168,74 @@ function toggleDetails(id, btn) {
     }
 }
 
-// 5. Book Tutor Function
+// 5. Book Tutor Function (Auto-Selects Dropdown)
 function bookTutor(tutorName) {
     const contactSection = document.getElementById('contact'); 
+    const tutorSelect = document.getElementById('tutor-select');
     const messageBox = document.querySelector('textarea');    
 
-    if (contactSection && messageBox) {
+    if (contactSection && tutorSelect) {
+        // 1. Scroll to contact section
         contactSection.scrollIntoView({ behavior: 'smooth' });
-        messageBox.value = `Hi, I am interested in booking a session with ${tutorName}.`;
+
+        // 2. Select the specific tutor in the dropdown
+        // Note: The value must match the <option> value in HTML exactly
+        tutorSelect.value = tutorName;
+        
+        // 3. Highlight the message box
         messageBox.focus();
     } else {
-        alert(`Please email us at email@hitthebooks.com to book ${tutorName}!`);
+        alert(`Please email us at htbtutors@gmail.com to book ${tutorName}!`);
     }
 }
 
-// 6. Event Listeners
+// 6. Event Listeners (Search on Enter key)
 const searchInput = document.getElementById('searchInput');
 if (searchInput) {
-    searchInput.addEventListener("keyup", function(event) { // Changed to keyup for instant results, or stick to keypress 'Enter'
-        searchTutors();
+    searchInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            searchTutors();
+        }
     });
 }
 
+// 7. Auto-Load Team on Team Page
 const teamGrid = document.getElementById('team-grid');
 if (teamGrid) {
     tutors.forEach((tutor, index) => {
         const row = createTeamRow(tutor, index);
         teamGrid.appendChild(row);
+    });
+}
+
+// 8. Handle Google Sheet Form Submission (Prevents Page Redirect)
+const bookingForm = document.getElementById('booking-form');
+
+if (bookingForm) {
+    bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Stop the page from reloading/redirecting
+        
+        const btn = bookingForm.querySelector('button');
+        const originalText = btn.innerText;
+        btn.innerText = "Sending...";
+        btn.disabled = true;
+
+        const formData = new FormData(bookingForm);
+
+        fetch(bookingForm.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            alert("Message Sent! We will contact you shortly.");
+            bookingForm.reset();
+            btn.innerText = originalText;
+            btn.disabled = false;
+        })
+        .catch(error => {
+            alert("Error! Please try again or email us directly.");
+            btn.innerText = originalText;
+            btn.disabled = false;
+        });
     });
 }

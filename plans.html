@@ -113,12 +113,18 @@
             <div class="contact-form">
                 <h3>Send a Message</h3>
 
-                <form action="https://formspree.io/f/mgovpbyl" method="POST">
+                <form id="booking-form" action="https://script.google.com/macros/s/AKfycbyKM80eQ21_DocVisxOu7LsfXSiWgDHbC3orTpY7FXRi8nklXfWOF2Sr-DQZrhJ4XzxBQ/exec" method="POST">
+
+                    <select name="tutor" id="tutor-select" required>
+                        <option value="General Inquiry" selected>General Inquiry / Not Sure</option>
+                        <option value="Allen Fraiman">Allen Fraiman</option>
+                        <option value="Philip Zghaib">Philip Zghaib</option>
+                        <option value="Sam Fraiman">Sam Fraiman</option>
+                        <option value="Lillian Zghaib">Lillian Zghaib</option>
+                    </select>
 
                     <input type="text" name="name" placeholder="Your Name" required>
-
                     <input type="email" name="email" placeholder="Your Email" required>
-
                     <textarea name="message" rows="4" placeholder="How can we help?"></textarea>
 
                     <button type="submit" class="btn-primary">Send</button>
