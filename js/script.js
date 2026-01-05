@@ -25,20 +25,19 @@ const tutors = [
     {
         name: "Philip Zghaib",
         subjects: [
-            "Math", "Algebra 1", "Algebra 2", "Geometry", "Pre-Calculus", 
-            "Calculus", "AP Calculus AB", 
-            "Finance", "Corporate Finance", "Business",
-            "Economics", "AP Macroeconomics", 
-            "Psychology", "AP Psychology",
-            "SAT Prep", "ACT Prep", "Test Prep"
+            "Math", "Algebra 1", "Algebra 2", "Geometry", "Trigonometry", 
+            "Pre-Calculus", "Calculus 1",
+            "Accounting", "Financial Accounting", "Finance", 
+            "Economics", "AP Macroeconomics",
+            "SAT Prep", "SAT Math", "SAT Verbal", "LSAT Prep", "Test Prep"
         ],
-        bio: "Expert in Mathematics, Finance, Economics, and AP Psychology.",
-        school: "College Name Here", 
-        major: "Finance/Economics", 
-        gpa: "Scores/GPA Here", 
-        hobbies: "Hobbies Here", 
-        detailedBio: "I tutor math students from grades 3 up to AP Calculus AB. My specialties also include Finance, AP Macroeconomics, and AP Psychology, along with standardized test prep.",
-        img: "images/profilepic.png"
+        bio: "Accounting & Finance Major. Expert in SAT strategies and logical reasoning.",
+        school: "Fordham University / Staten Island Technical HS", 
+        major: "Accounting and Finance", 
+        gpa: "3.7 GPA / 1480 SAT", 
+        hobbies: "Travelling, Music Production, Cooking", 
+        detailedBio: "I am an alumnus of Staten Island Technical HS and Fordham University. As an LSAT (166) and CPA exam candidate, I specialize in logical, step-by-step thinking. I teach heuristic strategies that help students cut down time and arrive at the right answer efficiently, particularly for the SAT (all sections), Mathematics, and Financial Accounting.",
+        img: "images/phil_profile.jpg"
     },
     {
         name: "Sam Fraiman",
@@ -48,11 +47,11 @@ const tutors = [
             "Chemistry", "High School Chemistry",
             "SAT Prep", "ACT Prep", "Test Prep"
         ],
-        bio: "Building strong foundations in K-12 Math and Chemistry.",
-        school: "College Name Here", 
-        major: "Major Here", 
-        gpa: "Scores/GPA Here", 
-        hobbies: "Hobbies Here", 
+        bio: "Mechanical Engineering Major. Building strong foundations in K-12 Math and Chemistry.",
+        school: "Northeastern University / Staten Island Tech HS", 
+        major: "Mechanical Engineering", 
+        gpa: "4.0 GPA / 33 ACT", 
+        hobbies: "Coding, Jiu Jitsu, Baking", 
         detailedBio: "I help students master math concepts from 3rd grade through AP Pre-Calculus. I also provide dedicated tutoring for High School Chemistry and test preparation.",
         img: "images/sam_profile.png"
     },
@@ -62,15 +61,16 @@ const tutors = [
             "English", "English Language", "Reading", "Writing", 
             "Essay Writing", "Grammar", "Vocabulary",
             "Literature", "AP Literature", 
-            "College Essays", "Creative Writing"
+            "College Essays", "Creative Writing",
+            "SAT Reading", "SAT Writing"
         ],
-        bio: "Specialist in English Literature, Writing, and Composition (Grades 3-12).",
-        school: "College Name Here", 
-        major: "English/Literature", 
-        gpa: "Scores/GPA Here", 
-        hobbies: "Hobbies Here", 
-        detailedBio: "I work with students from grades 3-12 to improve their reading comprehension and writing skills. I specialize in AP Literature and helping refine academic essays.",
-        img: "images/profilepic.png"
+        bio: "English & Writing Specialist. Perfect Scorer in SAT Reading/Writing.",
+        school: "Staten Island Technical HS", // Edit this
+        major: "English / Literature", 
+        gpa: "4.0 GPA / 1540 SAT (Perfect Reading/Writing)", 
+        hobbies: "Writing, Music, Reading", // Edit this
+        detailedBio: "With a perfect score in the Reading and Writing portion of the SAT, and as the author of an award-winning essay, I specialize in high school-level language examinations, college essay writing, and SAT English prep. I work with students from grades 3-12 to master reading comprehension and composition.",
+        img: "images/lily_profile.jpg"
     }
 ];
 
