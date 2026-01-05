@@ -4,14 +4,15 @@
 const tutors = [
     {
         name: "Allen Fraiman",
+        // Reordered to show diversity (Math + Science) immediately on the card
         subjects: [
-            "Math", "Algebra 1", "Algebra 2", "Geometry", "Trigonometry", 
-            "Pre-Calculus", "Calculus 1", "Calculus 2", "Calculus 3", 
-            "Differential Equations", "Statistics", "AP Statistics", "AP Calculus",
-            "Physics", "Physics 1", "Physics 2", "E&M", "Electricity & Magnetism",
-            "Chemistry", "General Chemistry",
-            "Mechanical Engineering", "Thermodynamics", "Fluid Mechanics", 
-            "Material Science", "Mechanics of Materials",
+            "Algebra", "Calculus", "Physics", "Chemistry", "Mechanical Engineering",
+            "Math", "Geometry", "Trigonometry", "Pre-Calculus", 
+            "Calculus 1", "Calculus 2", "Calculus 3", "Differential Equations", 
+            "Statistics", "AP Statistics", "AP Calculus",
+            "Physics 1", "Physics 2", "E&M", "Electricity & Magnetism",
+            "General Chemistry",
+            "Thermodynamics", "Fluid Mechanics", "Material Science", "Mechanics of Materials",
             "SAT Prep", "ACT Prep", "Test Prep"
         ],
         bio: "STEM specialist. Tutoring Math, Physics, Chemistry, and standardized test prep.",
@@ -24,12 +25,15 @@ const tutors = [
     },
     {
         name: "Philip Zghaib",
+        // Reordered to show Test Prep & Math immediately
         subjects: [
-            "Math", "Algebra 1", "Algebra 2", "Geometry", "Trigonometry", 
+            "SAT Prep", "Math", "LSAT Prep", "Accounting", "Algebra", 
+            "Calculus", "Finance", "Economics",
+            "Algebra 1", "Algebra 2", "Geometry", "Trigonometry", 
             "Pre-Calculus", "Calculus 1",
-            "Accounting", "Financial Accounting", "Finance", 
-            "Economics", "AP Macroeconomics",
-            "SAT Prep", "SAT Math", "SAT Verbal", "LSAT Prep", "Test Prep"
+            "Financial Accounting", "Corporate Finance", "Business",
+            "AP Macroeconomics",
+            "SAT Math", "SAT Verbal", "Test Prep"
         ],
         bio: "Accounting & Finance Major. Expert in SAT strategies and logical reasoning.",
         school: "Fordham University / Staten Island Technical HS", 
@@ -41,11 +45,12 @@ const tutors = [
     },
     {
         name: "Sam Fraiman",
+        // Reordered to show Math, Chemistry, and Test Prep immediately
         subjects: [
-            "Math", "Algebra 1", "Algebra 2", "Geometry", 
-            "Pre-Calculus", "AP Pre-Calculus",
-            "Chemistry", "High School Chemistry",
-            "SAT Prep", "ACT Prep", "Test Prep"
+            "Math", "Chemistry", "SAT Prep", "Algebra 1", "Geometry",
+            "Algebra 2", "Pre-Calculus", "AP Pre-Calculus",
+            "High School Chemistry",
+            "ACT Prep", "Test Prep"
         ],
         bio: "Mechanical Engineering Major. Building strong foundations in K-12 Math and Chemistry.",
         school: "Northeastern University / Staten Island Tech HS", 
@@ -57,18 +62,17 @@ const tutors = [
     },
     {
         name: "Lillian Zghaib",
+        // Reordered to highlight Test Prep & College Essays immediately
         subjects: [
-            "English", "English Language", "Reading", "Writing", 
-            "Essay Writing", "Grammar", "Vocabulary",
-            "Literature", "AP Literature", 
-            "College Essays", "Creative Writing",
-            "SAT Reading", "SAT Writing"
+            "SAT Reading", "SAT Writing", "College Essays", "English", "AP Literature",
+            "Reading", "Writing", "Essay Writing", "Grammar", "Vocabulary",
+            "Literature", "English Language", "Creative Writing"
         ],
         bio: "English & Writing Specialist. Perfect Scorer in SAT Reading/Writing.",
-        school: "Staten Island Technical HS", // Edit this
+        school: "Staten Island Technical HS", 
         major: "English / Literature", 
         gpa: "4.0 GPA / 1540 SAT (Perfect Reading/Writing)", 
-        hobbies: "Writing, Music, Reading", // Edit this
+        hobbies: "Writing, Music, Reading", 
         detailedBio: "With a perfect score in the Reading and Writing portion of the SAT, and as the author of an award-winning essay, I specialize in high school-level language examinations, college essay writing, and SAT English prep. I work with students from grades 3-12 to master reading comprehension and composition.",
         img: "images/lily_profile.jpg"
     }
