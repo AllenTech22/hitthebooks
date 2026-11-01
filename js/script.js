@@ -17,7 +17,7 @@ const tutors = [
         ],
         bio: "STEM specialist. Tutoring Math, Physics, Chemistry, and standardized test prep.",
         school: "Boston University / Staten Island Technical HS", 
-        major: "Mechanical Engineering", 
+        major: "B.S. Mechanical Engineering, summa cum laude", 
         gpa: "3.98 GPA / 1510 SAT", 
         hobbies: "Soccer, Jiu Jitsu, Robotics", 
         detailedBio: "With 4 years of experience tutoring students from elementary to college level, I have extensive experience teaching STEM topics, including AP courses and middle school curriculum. I have helped students gain acceptance into specialized high schools and increase their SAT scores by 250+ points.",
@@ -35,10 +35,10 @@ const tutors = [
         ],
         bio: "Neuroscience. Expert in science and test prep. Tutoring Biology, Chemistry, and standardized test prep.",
         school: "Boston College / Newton South HS", 
-        major: "Neuroscience", 
+        major: "B.S. Neuroscience, Latin Honors", 
         gpa: "AP Calc AB/BC: 5 / ACT: 35 (36 Math)", 
         hobbies: "Swimming, Chess, Biking", 
-        detailedBio: "Graduated with Latin honors from Boston College with B.S. in Neuroscience class of 2026. 6+ years of tutoring experience including classroom, 1 on 1, online and in person",
+        detailedBio: "6+ years of tutoring experience including classroom, 1 on 1, online and in person. I’ve worked with students with specific learning disabilities, and have customized approaches for each. Most of my AP Pre-Calc and Calculus students score a 5 on the exam, and I have helped students increase their ACT/SAT scores across all sections.",
         img: "images/mark_profile.jpg"
     },
     
