@@ -37,7 +37,7 @@ const tutors = [
         school: "Boston College / Newton South HS", 
         major: "Neuroscience", 
         gpa: "AP Calc AB/BC: 5 / ACT: 35 (36 Math)", 
-        hobbies: "Swimming, Gym, Biking", 
+        hobbies: "Swimming, Chess, Biking", 
         detailedBio: "Graduated with Latin honors from Boston College with B.S. in Neuroscience class of 2026. 6+ years of tutoring experience including classroom, 1 on 1, online and in person",
         img: "images/mark_profile.jpg"
     },
